@@ -46,7 +46,7 @@ document.onkeyup = function game() {
 
 
     //compare user guess to the letters in current word
-    function compare() {
+    //function compare() {
             for (var i = 0; i < computerGuess.length; i++) {
             //if user guess is in the word, that letter is revealed on the page.
             if (computerGuess[i] === userGuess) {
@@ -54,7 +54,7 @@ document.onkeyup = function game() {
             }
 
         }
-    }
+    //}
 
     //updates display values as game is played
     currentWordDisplay = underscores;
