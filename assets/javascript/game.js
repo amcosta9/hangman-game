@@ -1,15 +1,23 @@
 //declare variables
 
-var userGuess = "";
-var guesses = [];
-var computerGuess = "";
-var guessesLeft = 10;
+var game = {
+    userGuess : "",
+    guesses : [],
+    computerGuess : "",
+    guessesLeft : 10,
+    wins: 0,
+    losses: 0,
+    wordBank: wordBank = {
+        words: ["cake", "soccer", "shoe", "computer"],
+        letters: ["c", "a", "k", "e"]
+        }
+};
+
+
+
 //this var may be unnecessary?
 // var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var wordBank = ["cake", "soccer", "shoe", "computer"];
-var counter = 0;
-var wins = 0;
-var losses = 0;
+
 
 //link variables to display on screen
 
@@ -25,7 +33,7 @@ computerGuess = wordBank[Math.floor(Math.random() * wordBank.length)];
 console.log("Answer: " + computerGuess);
 //display underscores for word
     var underscores = "";
-    for(j=0; j<computerGuess.length; j++) {
+    for(var k = 0; k < computerGuess.length; k++) {
         underscores = underscores + "_ "
     }
 console.log("Current word: " + underscores);
