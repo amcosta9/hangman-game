@@ -3,7 +3,7 @@
 var userGuess = "";
 var guesses = [];
 var computerGuess = "";
-var guessesLeft = "";
+var guessesLeft = 10;
 //this var may be unnecessary?
 // var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var wordBank = ["cake", "soccer", "shoe", "computer"];
@@ -29,16 +29,21 @@ console.log("Answer: " + computerGuess);
         underscores = underscores + "_ "
     }
 console.log("Current word: " + underscores);
+//displays the var underscores on the DOM as current word
+document.getElementById("current-word").innerHTML = underscores;
 //user presses key to "guess" letters in word, guess is added to guesses array
 
-document.onkeyup = function game() {
+document.onkeyup = function (event) {
     userGuess = event.key;
+    guessesLeft --;
+    document.getElementById("guesses-left-d").innerHTML = guessesLeft;
+
     //check if user has already pressed this key. if yes, alert already guessed that one. start over.
     if (guesses.indexOf(userGuess) >= 0) {
         console.log("you already guessed that one");
         userGuess = ".";
         // game();
-        //need to start over here
+        //need to start over here/
     }
     console.log("user guessed " + userGuess);
     guesses.push(userGuess);
