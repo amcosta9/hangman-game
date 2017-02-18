@@ -1,6 +1,4 @@
-/**
- * Created by Ariel on 2/16/2017.
- */
+
 var game = {
     guesses: [],
     computerGuess: "",
@@ -8,7 +6,7 @@ var game = {
     guessesLeft: 10,
     wins: 0,
     losses: 0,
-    wordBank: ["Hogwarts", "Marauders Map", "Hedwig", "Quidditch"],
+    wordBank: ["hogwarts", "marauders map", "hedwig", "quidditch", "aguamenti", "dobby", "polyjuice", "voldemort", "sickle", "ravenclaw", "stupefy", "butterbeer", "bellatrix", "muggle"],
     showAnswer: false,
 
     //function to compare letter guessed to letters in the answer
@@ -67,13 +65,15 @@ var game = {
         if (this.guessesLeft === 0) {
             this.losses++;
             document.getElementById("losses-d").innerHTML = this.losses;
+            alert("Game Over!");
             this.startOver();
         }
         // if underscores equals exactly computer guess, wins + 1
         else if (this.computerGuess === this.underscores.join("")) {
             this.wins++;
             document.getElementById("wins-d").innerHTML = this.wins;
-            this.startOver();
+            alert("You Win!");
+            setTimeout(this.startOver(), 1000000);
         }
     },
 
@@ -87,9 +87,9 @@ var game = {
         this.computerGuess = "";
         document.getElementById("current-word").innerHTML = this.computerGuess;
 
-        showAnswer = false;
+        this.showAnswer = false;
         this.startGame();
-        }
+    }
 };
 
 
@@ -102,6 +102,9 @@ document.onkeyup = function (event) {
     console.log(userGuess);
     if (game.guesses.indexOf(userGuess) < 0) {
         if (event.keyCode >= 65 && event.keyCode <= 90) {
+            game.compare(userGuess);
+        }
+        if (event.keyCode === 32) {
             game.compare(userGuess);
         }
     }
