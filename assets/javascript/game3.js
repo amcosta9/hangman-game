@@ -42,17 +42,23 @@ var game = {
     },
 
 
-
+    //generating underscores for the length of answer
     updateWord: function (guess) {
         for (var k = 0; k < this.computerGuess.length; k++) {
-            this.underscores.push("_");
+            if (this.computerGuess[k] === " "){
+                this.underscores.push("\u00A0");
+            }
+            else {
+                this.underscores.push("_");
+            }
         }
         console.log("Current word: " + this.underscores);
+        //replaces , separating array to spaces
         document.getElementById("current-word").innerHTML = this.underscores.join(" ");
     },
 
     startGame: function () {
-        this.computerGuess = this.wordBank[Math.floor(Math.random() * this.wordBank.length)].toLowerCase();
+        this.computerGuess = this.wordBank[Math.floor(Math.random() * this.wordBank.length)].toUpperCase();
         console.log("Answer: " + this.computerGuess);
         this.updateWord();
         this.nextRound();
@@ -65,15 +71,16 @@ var game = {
         if (this.guessesLeft === 0) {
             this.losses++;
             document.getElementById("losses-d").innerHTML = this.losses;
-            alert("Game Over!");
+            alert("Sorry, the word was: " + this.computerGuess + ". Game Over!");
             this.startOver();
         }
-        // if underscores equals exactly computer guess, wins + 1
-        else if (this.computerGuess === this.underscores.join("")) {
+        // if there are no underscores left, you win! (space isn't working)
+        else if (this.underscores.indexOf("_") === -1 && this.underscores.indexOf("\u00A0") >= 0){
             this.wins++;
+            document.getElementById("#winImage").src=("./images/muggle.jpg");
             document.getElementById("wins-d").innerHTML = this.wins;
-            alert("You Win!");
-            setTimeout(this.startOver(), 1000000);
+            alert("You Win! The word was " + this.computerGuess + " !");
+            setTimeout(this.startOver(), 10000000);
         }
     },
 
@@ -100,6 +107,7 @@ game.startGame();
 document.onkeyup = function (event) {
     var userGuess = event.key;
     console.log(userGuess);
+    document.getElementById("#winImage").src=("./images/express.gif");
     if (game.guesses.indexOf(userGuess) < 0) {
         if (event.keyCode >= 65 && event.keyCode <= 90) {
             game.compare(userGuess);

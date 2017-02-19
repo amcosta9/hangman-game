@@ -2,23 +2,45 @@
 <html>
 <head>
     <title>Hangman</title>
-    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-<h1>Hangman</h1>
-<p>Press any key to start
-    <br>
-        Guess the letters in the word
-    <ul>
-        <li>Current word: <span id="current-word"> </span></li>
-        <li>Wins:  <span id="wins-d">0</span></li>
-        <li>Losses: <span id="losses-d">0</span></li>
-        <li>Guesses Left: <span id="guesses-left-d">10</span></li>
-        <li>Your Guesses so far: <span id="guesses-d"> </span></li>
-    </ul>
-</p>
+<div class="page-header">
+    <img src="assets/images/hplogo.png" class="img-responsive center-block logo" alt="Harry Potter Logo">
+    <h1>Hangman</h1>
+</div>
 
+<div class="row content">
+    <div class="col-md-6">
+        <img src="assets/images/express.gif" class="img-responsive" id="winImage" alt="Hogwarts Express">
+    </div>
+
+    <div class="col-md-6">
+        <br>
+        <p>Press any key to guess the word</p>
+        <br>
+        <ul class="list-unstyled">
+            <li><span id="current-word"> </span></li>
+            <br>
+            <li>Guesses Left: <span id="guesses-left-d">10</span></li>
+            <li>Your Guesses so far: <span id="guesses-d"> </span></li>
+            <br>
+            <li>Wins:  <span id="wins-d">0</span></li>
+            <li>Losses: <span id="losses-d">0</span></li>
+        </ul>
+    </div>
+</div>
+
+    <nav class="navbar navbar-default navbar-bottom footer">
+
+        <div class="container copyright">
+            <br>
+            &#169; Copyright 2017 Ariel M .Costa
+        </div>
+
+    </nav>
+<!--<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>-->
 <script src="assets/javascript/game3.js"></script>
 </body>
 </html>

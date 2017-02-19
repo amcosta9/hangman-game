@@ -1,0 +1,31 @@
+.page-header {
+    text-align: center;
+    /*background-color: #081C75;*/
+}
+
+.logo {
+    width: 40%;
+    opacity: .6;
+}
+
+body {
+    background: url(../images/background2.jpg) no-repeat fixed;
+    background-size: 100% 100%;
+    background-color: #000000;
+    font: #ffffff;
+    text-align: center;
+}
+
+.content {
+    outline: solid red 1px;
+    padding: 10px;
+    margin: 0px 30px 0px 30px;
+}
+
+#current-word {
+    font-size: 1.5em;
+}
+
+.footer {
+    background: transparent;
+}
