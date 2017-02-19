@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Hangman</title>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css" />
 </head>
+
 <body>
 <div class="page-header">
     <img src="assets/images/hplogo.png" class="img-responsive center-block logo" alt="Harry Potter Logo">
@@ -21,26 +23,40 @@
         <p id="pressKeyToPlay">Press any key to guess the word</p>
         <br>
         <ul class="list-unstyled">
-            <li id="turtles"><span id="current-word"> </span></li>
-            <br>
-            <li id="turtles2">Guesses Left: <span id="guesses-left-d">10</span></li>
-            <li id="turtles3">Your Guesses so far: <span id="guesses-d"> </span></li>
-            <br>
-            <li>Wins:  <span id="wins-d">0</span></li>
-            <li>Losses: <span id="losses-d">0</span></li>
+            <li id="turtles">
+                <span id="current-word"> </span>
+            </li>
+            <li id="turtles2">
+                Guesses Left:<span id="guesses-left-d">10</span>
+            </li>
+            <li id="turtles3">
+                Your Guesses so far: <span id="guesses-d"> </span>
+            </li>
+            <li>
+                <button id="hintButton" type="button" class="btn btn-primary">Need a Hint?</button>
+            </li>
+            <li>
+                <div id="hint"> </div>
+            </li>
+            <li>
+                Wins: <span id="wins-d">0</span>
+            </li>
+            <li>
+                Losses: <span id="losses-d">0</span>
+            </li>
         </ul>
     </div>
 </div>
 
-    <nav class="navbar navbar-default navbar-bottom footer">
+<nav id="foot" class="navbar navbar-default navbar-bottom footer">
 
-        <div class="container copyright">
-            <br>
-            &#169; Copyright 2017 Ariel M .Costa
-        </div>
+    <div class="container copyright">
+        <br> &#169; Copyright 2017 Ariel M .Costa
+    </div>
 
-    </nav>
-<!--<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>-->
+</nav>
+
 <script src="assets/javascript/game3.js"></script>
 </body>
+
 </html>

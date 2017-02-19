@@ -142,12 +142,15 @@ var game = {
         hideGL.style.display = "none";
         var hideGSF = document.getElementById("turtles3");
         hideGSF.style.display = "none";
+        var hideHint = document.getElementById("hintButton");
+        hideHint.style.display = "none";
         document.onkeyup = function (event) {
             if (event.keyCode === 13) {
                 document.getElementById("pressKeyToPlay").innerHTML = "Press any key to guess the word";
-                hideG.style.display = "initial";
-                hideGL.style.display = "initial";
-                hideGSF.style.display = "initial";
+                hideG.style.display = "list-item";
+                hideGL.style.display = "list-item";
+                hideGSF.style.display = "list-item";
+                hideHint.style.display = "list-item";
                 this.pictureChange = false;
                 game.startOver();
             }
@@ -162,12 +165,13 @@ var game = {
         document.getElementById("current-word").innerHTML = this.computerGuess;
 
         this.showAnswer = false;
-        //if user presses key, start game
+
 
     },
     startOver: function () {
         game.startGame();
         document.getElementById("winImage").src=("assets/images/express.jpg");
+        document.getElementById("hintButton").innerHTML = "Need a Hint?";
         document.onkeyup = function (event) {
             var userGuess = event.key.toUpperCase();
             console.log(userGuess);
@@ -180,14 +184,64 @@ var game = {
                 }
             }
         };
+    },
+
+    getHint: function () {
+        console.log(this.computerGuess);
+        if (game.computerGuess === "AGUAMENTI") {
+            document.getElementById("hintButton").innerHTML="Water Spell";
+        };
+        if (game.computerGuess === "BELLATRIX") {
+            document.getElementById("hintButton").innerHTML="Death Eater Witch with Crazy Hair";
+        };
+        if (game.computerGuess === "BUTTERBEER") {
+            document.getElementById("hintButton").innerHTML="Delicious Beverage";
+        };
+        if (game.computerGuess === "DOBBY") {
+            document.getElementById("hintButton").innerHTML="Freed with a Sock";
+        };
+        if (game.computerGuess === "HEDWIG") {
+            document.getElementById("hintButton").innerHTML="Harry's Owl";
+        };
+        if (game.computerGuess === "HOGWARTS") {
+            document.getElementById("hintButton").innerHTML="School of Witchcraft and Wizardry";
+        };
+        if (game.computerGuess === "MARAUDERS MAP") {
+            document.getElementById("hintButton").innerHTML="I Solemnly Swear I am up to No Good";
+        };
+        if (game.computerGuess === "MUGGLE") {
+            document.getElementById("hintButton").innerHTML="Non-Wizarding Folk";
+        };
+        if (game.computerGuess === "POLYJUICE") {
+            document.getElementById("hintButton").innerHTML="Potion to Change Appearance";
+        };
+        if (game.computerGuess === "QUIDDITCH") {
+            document.getElementById("hintButton").innerHTML="Wizard Sport";
+        };
+        if (game.computerGuess === "RAVENCLAW") {
+            document.getElementById("hintButton").innerHTML="Wit Beyond Measure is Man's Greatest Treasure";
+        };
+        if (game.computerGuess === "SICKLE") {
+            document.getElementById("hintButton").innerHTML="Type of Wizard Currency";
+        };
+        if (game.computerGuess === "STUPEFY") {
+            document.getElementById("hintButton").innerHTML="Stunning Spell";
+        };
+        if (game.computerGuess === "VOLDEMORT") {
+            document.getElementById("hintButton").innerHTML="You-Know-Who";
+        };
+
     }
+
+
+
 };
 
 
 
 
 game.startGame();
-
+document.getElementById("hintButton").addEventListener("click", game.getHint);
 document.onkeyup = function (event) {
     var userGuess = event.key.toUpperCase();
     console.log(userGuess);
