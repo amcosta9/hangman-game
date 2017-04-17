@@ -1,20 +1,15 @@
-# hangman-game
+# Harry Potter Hangman
 
-psuedo code:
-1. page loads
-2. computer chooses random word from word bank (array of words)
-3. user presses keys on keyboard to "guess" letters in word, and their guess is added to guesses so far on screen
-4. check if user has already pressed this key. if yes, alert already guessed that one. start over.
-5. compare users guesses to the letters in current word
-6. if guess is in the word, that letter is revealed on the page.
-7. if guess is not in the word, alert that it is not in the word.
-8. user only has # of tries. change tries left, reduces by 1.
+##Check it out [here](https://amcosta9.github.io/hangman-game/)!
 
-update dom?
+#### How it works
 
-9. check if user has tries left.  if yes, wait for key up.
-10. if no, losses increases by 1. game reload.
+* This is a Harry Potter themed vanilla Javascript hangman game
+* Press any letter key to guess the word. You can only have 10 incorrect guesses before you lose!
+* Click the `hint` button if you need a hint.
+* Between rounds, press `Enter ` to play again.
+* Your wins and losses will be stored until you refresh the page.
 
-11. check if guess completes the word. if yes, wins increases by 1. game reload.
+#### Assignment
 
-11. game reload = new random word chosen, # tries left resets, user guesses resets.
+* This application is an [assignment](https://github.com/UCF-Coding-Boot-Camp/01-2017-VW-Class-Content/blob/master/Homework/Week-03/Instructions/homework-instructions.md "Homework #3") excecuted by [Ariel M. Costa,](https://github.com/amcosta9 "Ariel Costa GitHub") for UCF Coding Bootcamp, Spring Cohort 

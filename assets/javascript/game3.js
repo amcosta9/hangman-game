@@ -61,6 +61,7 @@ var game = {
         console.log("Answer: " + this.computerGuess);
         this.updateWord();
         this.nextRound();
+
     },
 
     nextRound: function() {
@@ -84,6 +85,7 @@ var game = {
             alert("You Win! The word was " + this.computerGuess + " !");
 
         };
+
     },
 
     changePicture: function() {
