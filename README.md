@@ -1,6 +1,6 @@
 # Harry Potter Hangman
 
-##Check it out [here](https://amcosta9.github.io/hangman-game/)!
+## Check it out [here](https://amcosta9.github.io/hangman-game/)!
 
 #### How it works
 
